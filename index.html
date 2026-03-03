@@ -1,0 +1,908 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ascension Labs — Precision Peptide Science</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <header class="nav" id="nav">
+    <div class="nav__inner">
+      <a href="#" class="nav__logo">
+        <svg class="nav__logo-mark" viewBox="0 0 32 32" fill="none">
+          <circle cx="16" cy="16" r="14" stroke="currentColor" stroke-width="1.2"/>
+          <circle cx="16" cy="16" r="6" stroke="currentColor" stroke-width="1.2"/>
+          <line x1="16" y1="2" x2="16" y2="10" stroke="currentColor" stroke-width="1.2"/>
+          <line x1="16" y1="22" x2="16" y2="30" stroke="currentColor" stroke-width="1.2"/>
+          <line x1="2" y1="16" x2="10" y2="16" stroke="currentColor" stroke-width="1.2"/>
+          <line x1="22" y1="16" x2="30" y2="16" stroke="currentColor" stroke-width="1.2"/>
+        </svg>
+        <span>ASCENSION LABS</span>
+      </a>
+      <nav class="nav__links">
+        <a href="#science">Science</a>
+        <a href="#protocols">Protocols</a>
+        <a href="#products">Compounds</a>
+        <a href="#about">About</a>
+        <a href="#consult" class="nav__cta">Consult</a>
+      </nav>
+      <button class="nav__burger" aria-label="Menu" id="burger">
+        <span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero" id="hero">
+    <canvas id="particleCanvas"></canvas>
+    <div class="hero__mol-art" aria-hidden="true">
+      <svg viewBox="0 0 520 780" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <!-- Ring system 1 — fused bicyclic -->
+        <polygon points="230,52 268,74 268,118 230,140 192,118 192,74" stroke="white" stroke-width="1"/>
+        <circle cx="230" cy="96" r="25" stroke="white" stroke-width="0.6" stroke-dasharray="3 3"/>
+        <polygon points="268,74 306,52 344,74 344,118 306,140 268,118" stroke="white" stroke-width="1"/>
+        <circle cx="306" cy="96" r="25" stroke="white" stroke-width="0.6" stroke-dasharray="3 3"/>
+        <!-- Nodes on rings -->
+        <circle cx="230" cy="52" r="2.5" fill="white"/>
+        <circle cx="268" cy="74" r="2.5" fill="white"/>
+        <circle cx="268" cy="118" r="2.5" fill="white"/>
+        <circle cx="230" cy="140" r="2.5" fill="white"/>
+        <circle cx="192" cy="118" r="2.5" fill="white"/>
+        <circle cx="192" cy="74" r="2.5" fill="white"/>
+        <circle cx="306" cy="52" r="2.5" fill="white"/>
+        <circle cx="344" cy="74" r="2.5" fill="white"/>
+        <circle cx="344" cy="118" r="2.5" fill="white"/>
+        <circle cx="306" cy="140" r="2.5" fill="white"/>
+        <!-- Side chain upper left -->
+        <line x1="192" y1="96" x2="152" y2="96" stroke="white" stroke-width="1"/>
+        <line x1="152" y1="96" x2="128" y2="74" stroke="white" stroke-width="1"/>
+        <line x1="128" y1="74" x2="100" y2="84" stroke="white" stroke-width="1"/>
+        <circle cx="100" cy="84" r="2.5" fill="white"/>
+        <line x1="152" y1="96" x2="128" y2="118" stroke="white" stroke-width="1"/>
+        <!-- Double bond annotation -->
+        <line x1="128" y1="74" x2="110" y2="56" stroke="white" stroke-width="1"/>
+        <line x1="131" y1="71" x2="113" y2="53" stroke="white" stroke-width="0.7"/>
+        <circle cx="108" cy="54" r="2" fill="white"/>
+        <!-- Upper right chain -->
+        <line x1="344" y1="96" x2="384" y2="96" stroke="white" stroke-width="1"/>
+        <line x1="384" y1="96" x2="404" y2="68" stroke="white" stroke-width="1"/>
+        <line x1="404" y1="68" x2="432" y2="58" stroke="white" stroke-width="1"/>
+        <circle cx="432" cy="58" r="2.5" fill="white"/>
+        <line x1="384" y1="96" x2="404" y2="124" stroke="white" stroke-width="1"/>
+        <line x1="404" y1="124" x2="432" y2="132" stroke="white" stroke-width="1"/>
+        <!-- Top exit chain -->
+        <line x1="268" y1="52" x2="268" y2="18" stroke="white" stroke-width="1"/>
+        <line x1="268" y1="18" x2="248" y2="4" stroke="white" stroke-width="1"/>
+        <line x1="268" y1="18" x2="290" y2="4" stroke="white" stroke-width="1"/>
+        <circle cx="248" cy="4" r="2" fill="white"/>
+        <circle cx="290" cy="4" r="2" fill="white"/>
+
+        <!-- Connection down to peptide chain -->
+        <line x1="230" y1="140" x2="210" y2="170" stroke="white" stroke-width="1"/>
+        <line x1="210" y1="170" x2="226" y2="200" stroke="white" stroke-width="1"/>
+        <!-- Carbonyl branch -->
+        <line x1="210" y1="170" x2="186" y2="154" stroke="white" stroke-width="1"/>
+        <line x1="187" y1="155" x2="165" y2="141" stroke="white" stroke-width="1"/>
+        <line x1="189" y1="151" x2="167" y2="137" stroke="white" stroke-width="0.7"/>
+        <circle cx="164" cy="139" r="2.5" fill="white"/>
+        <!-- NH -->
+        <line x1="226" y1="200" x2="208" y2="224" stroke="white" stroke-width="1"/>
+        <circle cx="207" cy="226" r="2.5" fill="white"/>
+        <line x1="226" y1="200" x2="252" y2="214" stroke="white" stroke-width="1"/>
+        <circle cx="254" cy="215" r="2.5" fill="white"/>
+
+        <!-- Proline-like 5-membered ring -->
+        <polygon points="226,268 262,248 292,270 278,310 198,310" stroke="white" stroke-width="1"/>
+        <line x1="226" y1="200" x2="226" y2="268" stroke="white" stroke-width="1"/>
+        <circle cx="226" cy="268" r="2.5" fill="white"/>
+        <circle cx="262" cy="248" r="2.5" fill="white"/>
+        <circle cx="292" cy="270" r="2.5" fill="white"/>
+        <circle cx="278" cy="310" r="2.5" fill="white"/>
+        <circle cx="198" cy="310" r="2.5" fill="white"/>
+        <!-- Side branch off ring -->
+        <line x1="292" y1="270" x2="332" y2="258" stroke="white" stroke-width="1"/>
+        <line x1="332" y1="258" x2="356" y2="278" stroke="white" stroke-width="1"/>
+        <line x1="332" y1="258" x2="350" y2="238" stroke="white" stroke-width="1"/>
+        <circle cx="356" cy="278" r="2" fill="white"/>
+        <circle cx="350" cy="238" r="2" fill="white"/>
+
+        <!-- Chain from ring downward -->
+        <line x1="278" y1="310" x2="260" y2="340" stroke="white" stroke-width="1"/>
+        <line x1="260" y1="340" x2="276" y2="370" stroke="white" stroke-width="1"/>
+        <!-- Amide bond annotation -->
+        <line x1="260" y1="340" x2="236" y2="328" stroke="white" stroke-width="1"/>
+        <line x1="237" y1="329" x2="215" y2="319" stroke="white" stroke-width="1"/>
+        <line x1="238" y1="325" x2="216" y2="315" stroke="white" stroke-width="0.7"/>
+        <circle cx="213" cy="317" r="2.5" fill="white"/>
+        <!-- Continue chain -->
+        <line x1="276" y1="370" x2="256" y2="400" stroke="white" stroke-width="1"/>
+        <line x1="256" y1="400" x2="272" y2="430" stroke="white" stroke-width="1"/>
+        <!-- Long side chain (Lys-like) -->
+        <line x1="256" y1="400" x2="224" y2="392" stroke="white" stroke-width="1"/>
+        <line x1="224" y1="392" x2="196" y2="408" stroke="white" stroke-width="1"/>
+        <line x1="196" y1="408" x2="166" y2="400" stroke="white" stroke-width="1"/>
+        <line x1="166" y1="400" x2="140" y2="416" stroke="white" stroke-width="1"/>
+        <circle cx="140" cy="416" r="2.5" fill="white"/>
+        <circle cx="224" cy="392" r="2" fill="white"/>
+        <circle cx="196" cy="408" r="2" fill="white"/>
+        <circle cx="166" cy="400" r="2" fill="white"/>
+
+        <!-- Second aromatic ring lower section -->
+        <line x1="272" y1="430" x2="272" y2="470" stroke="white" stroke-width="1"/>
+        <polygon points="234,494 272,470 310,494 310,542 272,566 234,542" stroke="white" stroke-width="1"/>
+        <circle cx="272" cy="518" r="25" stroke="white" stroke-width="0.6" stroke-dasharray="3 3"/>
+        <circle cx="234" cy="494" r="2.5" fill="white"/>
+        <circle cx="272" cy="470" r="2.5" fill="white"/>
+        <circle cx="310" cy="494" r="2.5" fill="white"/>
+        <circle cx="310" cy="542" r="2.5" fill="white"/>
+        <circle cx="272" cy="566" r="2.5" fill="white"/>
+        <circle cx="234" cy="542" r="2.5" fill="white"/>
+        <!-- Ring side chains -->
+        <line x1="310" y1="518" x2="350" y2="518" stroke="white" stroke-width="1"/>
+        <line x1="350" y1="518" x2="370" y2="494" stroke="white" stroke-width="1"/>
+        <line x1="370" y1="494" x2="398" y2="500" stroke="white" stroke-width="1"/>
+        <circle cx="400" cy="501" r="2.5" fill="white"/>
+        <line x1="350" y1="518" x2="370" y2="542" stroke="white" stroke-width="1"/>
+        <!-- OH group -->
+        <line x1="234" y1="518" x2="194" y2="518" stroke="white" stroke-width="1"/>
+        <line x1="194" y1="518" x2="172" y2="498" stroke="white" stroke-width="1"/>
+        <line x1="173" y1="498" x2="150" y2="506" stroke="white" stroke-width="0.8"/>
+        <circle cx="148" cy="507" r="2.5" fill="white"/>
+
+        <!-- Terminal chain -->
+        <line x1="272" y1="566" x2="252" y2="598" stroke="white" stroke-width="1"/>
+        <line x1="252" y1="598" x2="268" y2="630" stroke="white" stroke-width="1"/>
+        <line x1="268" y1="630" x2="248" y2="662" stroke="white" stroke-width="1"/>
+        <line x1="248" y1="662" x2="264" y2="694" stroke="white" stroke-width="1"/>
+        <!-- COOH terminus -->
+        <line x1="264" y1="694" x2="244" y2="720" stroke="white" stroke-width="1"/>
+        <line x1="244" y1="720" x2="222" y2="712" stroke="white" stroke-width="1"/>
+        <line x1="243" y1="720" x2="221" y2="712" stroke="white" stroke-width="0.7"/>
+        <circle cx="219" cy="711" r="2.5" fill="white"/>
+        <line x1="264" y1="694" x2="288" y2="710" stroke="white" stroke-width="1"/>
+        <circle cx="290" cy="711" r="2.5" fill="white"/>
+        <!-- Node dots along terminal chain -->
+        <circle cx="252" cy="598" r="2" fill="white"/>
+        <circle cx="268" cy="630" r="2" fill="white"/>
+        <circle cx="248" cy="662" r="2" fill="white"/>
+        <circle cx="264" cy="694" r="2" fill="white"/>
+
+        <!-- Scattered annotations — technical marks -->
+        <line x1="420" y1="300" x2="460" y2="280" stroke="white" stroke-width="0.6" stroke-dasharray="2 4"/>
+        <line x1="460" y1="280" x2="490" y2="295" stroke="white" stroke-width="0.6" stroke-dasharray="2 4"/>
+        <circle cx="420" cy="300" r="1.5" fill="white" opacity="0.5"/>
+        <circle cx="490" cy="295" r="1.5" fill="white" opacity="0.5"/>
+
+        <line x1="100" y1="500" x2="60" y2="520" stroke="white" stroke-width="0.6" stroke-dasharray="2 4"/>
+        <line x1="60" y1="520" x2="40" y2="505" stroke="white" stroke-width="0.6" stroke-dasharray="2 4"/>
+        <circle cx="100" cy="500" r="1.5" fill="white" opacity="0.5"/>
+
+        <line x1="440" y1="440" x2="480" y2="430" stroke="white" stroke-width="0.6" stroke-dasharray="2 4"/>
+        <circle cx="480" cy="430" r="1.5" fill="white" opacity="0.5"/>
+        <circle cx="440" cy="440" r="2" stroke="white" stroke-width="0.8" fill="none"/>
+
+        <!-- Measurement bracket top -->
+        <line x1="192" y1="44" x2="192" y2="28" stroke="white" stroke-width="0.7" opacity="0.4"/>
+        <line x1="344" y1="44" x2="344" y2="28" stroke="white" stroke-width="0.7" opacity="0.4"/>
+        <line x1="192" y1="32" x2="344" y2="32" stroke="white" stroke-width="0.7" opacity="0.4"/>
+      </svg>
+    </div>
+    <div class="hero__content">
+      <div class="hero__left">
+        <div class="hero__classify reveal">
+          <span class="hero__classify-tag">SYNTHETIC PEPTIDE</span>
+          <span class="hero__classify-tag">GMP GRADE</span>
+          <span class="hero__classify-tag">≥99% HPLC</span>
+        </div>
+        <p class="hero__eyebrow reveal">PRECISION PEPTIDE SCIENCE</p>
+        <h1 class="hero__headline reveal">
+          Optimise<br /><em>Every System.</em>
+        </h1>
+        <p class="hero__sub reveal">
+          Pharmaceutical-grade peptides engineered for the serious biohacker. Clinically informed. Rigorously sourced. Precisely dosed.
+        </p>
+        <div class="hero__sequence reveal" aria-label="BPC-157 amino acid sequence">
+          <span class="hero__seq-label">BPC-157</span>
+          <code class="hero__seq-code">H₂N·Gly·Glu·Pro·Pro·Pro·Gly·Lys·Pro·Ala·Asp·Asp·Ala·Gly·Leu·Val·COOH</code>
+        </div>
+        <div class="hero__actions reveal">
+          <a href="#products" class="btn btn--primary-light">Explore Compounds</a>
+          <a href="#science" class="btn btn--ghost-light">Our Science</a>
+        </div>
+      </div>
+    </div>
+    <div class="hero__scroll-indicator">
+      <span>SCROLL</span>
+      <div class="hero__scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- MARQUEE STRIP -->
+  <div class="marquee-strip">
+    <div class="marquee-track">
+      <span>BPC-157</span><span class="sep">—</span>
+      <span>TB-500</span><span class="sep">—</span>
+      <span>CJC-1295</span><span class="sep">—</span>
+      <span>Ipamorelin</span><span class="sep">—</span>
+      <span>Epithalon</span><span class="sep">—</span>
+      <span>Selank</span><span class="sep">—</span>
+      <span>GHK-Cu</span><span class="sep">—</span>
+      <span>AOD-9604</span><span class="sep">—</span>
+      <span>Semax</span><span class="sep">—</span>
+      <span>PT-141</span><span class="sep">—</span>
+      <span>DSIP</span><span class="sep">—</span>
+      <span>Tesamorelin</span><span class="sep">—</span>
+      <span>BPC-157</span><span class="sep">—</span>
+      <span>TB-500</span><span class="sep">—</span>
+      <span>CJC-1295</span><span class="sep">—</span>
+      <span>Ipamorelin</span><span class="sep">—</span>
+      <span>Epithalon</span><span class="sep">—</span>
+      <span>Selank</span><span class="sep">—</span>
+      <span>GHK-Cu</span><span class="sep">—</span>
+      <span>AOD-9604</span><span class="sep">—</span>
+      <span>Semax</span><span class="sep">—</span>
+      <span>PT-141</span><span class="sep">—</span>
+      <span>DSIP</span><span class="sep">—</span>
+      <span>Tesamorelin</span><span class="sep">—</span>
+    </div>
+  </div>
+
+  <!-- SCIENCE -->
+  <section class="science section" id="science">
+    <div class="container">
+      <div class="section__header">
+        <p class="section__label reveal">01 — THE SCIENCE</p>
+        <h2 class="section__title reveal">
+          Where molecular biology<br /><em>meets performance.</em>
+        </h2>
+      </div>
+      <div class="science__grid">
+        <div class="science__card reveal">
+          <div class="science__card-icon">
+            <svg viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="20" stroke="currentColor" stroke-width="1"/><path d="M24 8 C28 14 28 20 24 24 C20 28 20 34 24 40" stroke="currentColor" stroke-width="1.2" fill="none"/><path d="M16 12 C20 16 28 16 32 12" stroke="currentColor" stroke-width="1" fill="none" stroke-dasharray="2 2"/><path d="M16 36 C20 32 28 32 32 36" stroke="currentColor" stroke-width="1" fill="none" stroke-dasharray="2 2"/></svg>
+          </div>
+          <h3>Pharmaceutical Purity</h3>
+          <p>Every batch undergoes HPLC and high-resolution mass spectrometry. Certificates of analysis published with every order — no exceptions.</p>
+          <div class="science__card-ref"><code>Methods: RP-HPLC · ESI-MS · NMR</code></div>
+        </div>
+        <div class="science__card reveal">
+          <div class="science__card-icon">
+            <svg viewBox="0 0 48 48" fill="none"><rect x="8" y="20" width="32" height="16" rx="2" stroke="currentColor" stroke-width="1"/><path d="M16 20V14a8 8 0 0 1 16 0v6" stroke="currentColor" stroke-width="1.2" fill="none"/><circle cx="24" cy="28" r="3" stroke="currentColor" stroke-width="1"/></svg>
+          </div>
+          <h3>Cold-Chain Integrity</h3>
+          <p>Lyophilised compounds shipped in insulated packaging with real-time temperature monitoring. Potency preserved from synthesis to your door.</p>
+          <div class="science__card-ref"><code>Protocol: ISO 13485 · 2–8°C maintained</code></div>
+        </div>
+        <div class="science__card reveal">
+          <div class="science__card-icon">
+            <svg viewBox="0 0 48 48" fill="none"><path d="M12 36 L24 12 L36 36" stroke="currentColor" stroke-width="1.2" fill="none"/><path d="M17 27 h14" stroke="currentColor" stroke-width="1" fill="none"/><circle cx="24" cy="12" r="2" stroke="currentColor" stroke-width="1"/></svg>
+          </div>
+          <h3>Research-Led Formulation</h3>
+          <p>Protocols informed by peer-reviewed literature and refined by a clinical advisory board of longevity physicians and biochemists.</p>
+          <div class="science__card-ref"><code>Threshold: ≥2 human RCTs per compound</code></div>
+        </div>
+        <div class="science__card reveal">
+          <div class="science__card-icon">
+            <svg viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="18" stroke="currentColor" stroke-width="1"/><path d="M24 6 v36 M6 24 h36" stroke="currentColor" stroke-width="0.8" stroke-dasharray="2 3"/><path d="M11 11 L37 37 M37 11 L11 37" stroke="currentColor" stroke-width="0.8" stroke-dasharray="2 3"/></svg>
+          </div>
+          <h3>Tailored Protocols</h3>
+          <p>No one-size-fits-all dosing. Our consultation service matches compounds, cycles, and stacks to your individual biomarkers and goals.</p>
+          <div class="science__card-ref"><code>Input: biomarkers · lifestyle · phenotype</code></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LABORATORY STANDARDS -->
+  <section class="lab section" id="lab">
+    <div class="container">
+      <div class="lab__inner">
+        <div class="lab__header reveal">
+          <p class="section__label section__label--light">02 — ANALYTICAL STANDARDS</p>
+          <h2 class="section__title section__title--light">
+            Every compound,<br /><em>verified independently.</em>
+          </h2>
+          <p class="lab__intro">
+            Third-party HPLC analysis across our full catalogue. Results are published in real time. We accept returns on any compound that falls below specification — no questions asked.
+          </p>
+        </div>
+        <div class="lab__assay">
+          <div class="assay-row reveal">
+            <div class="assay-row__name"><span class="assay-mono">BPC-157</span></div>
+            <div class="assay-row__bar-wrap">
+              <div class="assay-bar" data-pct="99.2">
+                <div class="assay-bar__fill"></div>
+              </div>
+            </div>
+            <div class="assay-row__pct assay-mono" data-target="99.2">—</div>
+            <div class="assay-row__method assay-mono">RP-HPLC</div>
+          </div>
+          <div class="assay-row reveal">
+            <div class="assay-row__name"><span class="assay-mono">TB-500</span></div>
+            <div class="assay-row__bar-wrap">
+              <div class="assay-bar" data-pct="98.8">
+                <div class="assay-bar__fill"></div>
+              </div>
+            </div>
+            <div class="assay-row__pct assay-mono" data-target="98.8">—</div>
+            <div class="assay-row__method assay-mono">RP-HPLC</div>
+          </div>
+          <div class="assay-row reveal">
+            <div class="assay-row__name"><span class="assay-mono">CJC-1295</span></div>
+            <div class="assay-row__bar-wrap">
+              <div class="assay-bar" data-pct="99.0">
+                <div class="assay-bar__fill"></div>
+              </div>
+            </div>
+            <div class="assay-row__pct assay-mono" data-target="99.0">—</div>
+            <div class="assay-row__method assay-mono">ESI-MS</div>
+          </div>
+          <div class="assay-row reveal">
+            <div class="assay-row__name"><span class="assay-mono">Epithalon</span></div>
+            <div class="assay-row__bar-wrap">
+              <div class="assay-bar" data-pct="99.4">
+                <div class="assay-bar__fill"></div>
+              </div>
+            </div>
+            <div class="assay-row__pct assay-mono" data-target="99.4">—</div>
+            <div class="assay-row__method assay-mono">RP-HPLC</div>
+          </div>
+          <div class="assay-row reveal">
+            <div class="assay-row__name"><span class="assay-mono">Semax</span></div>
+            <div class="assay-row__bar-wrap">
+              <div class="assay-bar" data-pct="98.9">
+                <div class="assay-bar__fill"></div>
+              </div>
+            </div>
+            <div class="assay-row__pct assay-mono" data-target="98.9">—</div>
+            <div class="assay-row__method assay-mono">ESI-MS</div>
+          </div>
+          <div class="assay-row reveal">
+            <div class="assay-row__name"><span class="assay-mono">Ipamorelin</span></div>
+            <div class="assay-row__bar-wrap">
+              <div class="assay-bar" data-pct="99.1">
+                <div class="assay-bar__fill"></div>
+              </div>
+            </div>
+            <div class="assay-row__pct assay-mono" data-target="99.1">—</div>
+            <div class="assay-row__method assay-mono">RP-HPLC</div>
+          </div>
+        </div>
+        <div class="lab__methods reveal">
+          <div class="lab-method"><span class="lab-method__check">✓</span><span>Reverse-Phase HPLC</span></div>
+          <div class="lab-method"><span class="lab-method__check">✓</span><span>Electrospray Mass Spectrometry</span></div>
+          <div class="lab-method"><span class="lab-method__check">✓</span><span>Endotoxin (LAL Assay)</span></div>
+          <div class="lab-method"><span class="lab-method__check">✓</span><span>Sterility Testing</span></div>
+          <div class="lab-method"><span class="lab-method__check">✓</span><span>Residual Solvent Analysis</span></div>
+          <div class="lab-method"><span class="lab-method__check">✓</span><span>Certificate of Analysis — every batch</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROTOCOLS -->
+  <section class="protocols section" id="protocols">
+    <div class="container">
+      <div class="protocols__inner">
+        <div class="protocols__left reveal">
+          <p class="section__label">03 — PROTOCOLS</p>
+          <h2 class="section__title">
+            Stacks engineered<br /><em>for outcomes.</em>
+          </h2>
+          <p class="protocols__body">
+            Six clinically-informed protocols spanning recovery, cognition, longevity, body composition, sleep, and hormonal optimisation. Each stack is a curated combination of synergistic peptides with defined dosing windows and cycle lengths.
+          </p>
+          <a href="#products" class="btn btn--primary">View All Protocols</a>
+        </div>
+        <div class="protocols__right">
+          <div class="protocol-card reveal" data-cat="Recovery">
+            <div class="protocol-card__header">
+              <span class="protocol-card__tag">Recovery</span>
+              <span class="protocol-card__arrow">→</span>
+            </div>
+            <h4>Regeneration Stack</h4>
+            <p>BPC-157 + TB-500 — tissue repair, anti-inflammatory cascade, accelerated healing.</p>
+            <div class="protocol-card__compounds">
+              <span>BPC-157</span><span>TB-500</span>
+            </div>
+          </div>
+          <div class="protocol-card reveal" data-cat="Cognition">
+            <div class="protocol-card__header">
+              <span class="protocol-card__tag">Cognition</span>
+              <span class="protocol-card__arrow">→</span>
+            </div>
+            <h4>Neural Edge Stack</h4>
+            <p>Semax + Selank — BDNF upregulation, anxiety reduction, sustained cognitive clarity.</p>
+            <div class="protocol-card__compounds">
+              <span>Semax</span><span>Selank</span>
+            </div>
+          </div>
+          <div class="protocol-card reveal" data-cat="Longevity">
+            <div class="protocol-card__header">
+              <span class="protocol-card__tag">Longevity</span>
+              <span class="protocol-card__arrow">→</span>
+            </div>
+            <h4>Cellular Renewal Stack</h4>
+            <p>Epithalon + GHK-Cu — telomere support, skin regeneration, epigenetic reset.</p>
+            <div class="protocol-card__compounds">
+              <span>Epithalon</span><span>GHK-Cu</span>
+            </div>
+          </div>
+          <div class="protocol-card reveal" data-cat="Performance">
+            <div class="protocol-card__header">
+              <span class="protocol-card__tag">Performance</span>
+              <span class="protocol-card__arrow">→</span>
+            </div>
+            <h4>GH Axis Stack</h4>
+            <p>CJC-1295 + Ipamorelin — pulsatile GH release, lean mass accrual, metabolic support.</p>
+            <div class="protocol-card__compounds">
+              <span>CJC-1295</span><span>Ipamorelin</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRODUCTS -->
+  <section class="products section" id="products">
+    <div class="container">
+      <div class="section__header">
+        <p class="section__label reveal">04 — COMPOUNDS</p>
+        <h2 class="section__title reveal">
+          The complete<br /><em>catalogue.</em>
+        </h2>
+      </div>
+      <div class="products__filters reveal">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="recovery">Recovery</button>
+        <button class="filter-btn" data-filter="cognition">Cognition</button>
+        <button class="filter-btn" data-filter="longevity">Longevity</button>
+        <button class="filter-btn" data-filter="performance">Performance</button>
+        <button class="filter-btn" data-filter="sleep">Sleep</button>
+      </div>
+      <div class="products__grid" id="productsGrid">
+
+        <div class="product-card reveal" data-category="recovery">
+          <div class="product-card__badge">Best Seller</div>
+          <span class="product-card__category">Recovery</span>
+          <h4 class="product-card__name">BPC-157</h4>
+          <p class="product-card__desc">Body Protection Compound. Accelerates healing of tendons, ligaments, gut and neurological tissue.</p>
+          <div class="product-card__data">
+            <div class="data-row"><span class="data-label">MW</span><code class="data-val">1419.5 Da</code></div>
+            <div class="data-row"><span class="data-label">Half-life</span><code class="data-val">~4 hours</code></div>
+            <div class="data-row"><span class="data-label">Sequence</span><code class="data-val seq">Gly·Glu·Pro·Pro·Pro·Gly·Lys·Pro·Ala·…</code></div>
+          </div>
+          <div class="product-card__purity">
+            <div class="purity-header">
+              <span class="purity-label">Purity</span>
+              <code class="purity-pct" data-pct="99.2">—</code>
+            </div>
+            <div class="purity-bar" data-pct="99.2"><div class="purity-bar__fill"></div></div>
+          </div>
+          <div class="product-card__bottom">
+            <div class="product-card__price">
+              <span class="product-card__amount">£85</span>
+              <span class="product-card__size">/ 5mg vial</span>
+            </div>
+            <a href="#consult" class="btn btn--outline btn--sm">Add to Protocol</a>
+          </div>
+        </div>
+
+        <div class="product-card reveal" data-category="recovery">
+          <span class="product-card__category">Recovery</span>
+          <h4 class="product-card__name">TB-500</h4>
+          <p class="product-card__desc">Thymosin Beta-4 fragment. Promotes systemic tissue repair and reduces inflammatory cytokines.</p>
+          <div class="product-card__data">
+            <div class="data-row"><span class="data-label">MW</span><code class="data-val">4963.5 Da</code></div>
+            <div class="data-row"><span class="data-label">Half-life</span><code class="data-val">24–36 hours</code></div>
+            <div class="data-row"><span class="data-label">Sequence</span><code class="data-val seq">Ser·Asp·Lys·Pro·Asp·Met·Ala·Glu·Ile·…</code></div>
+          </div>
+          <div class="product-card__purity">
+            <div class="purity-header">
+              <span class="purity-label">Purity</span>
+              <code class="purity-pct" data-pct="98.8">—</code>
+            </div>
+            <div class="purity-bar" data-pct="98.8"><div class="purity-bar__fill"></div></div>
+          </div>
+          <div class="product-card__bottom">
+            <div class="product-card__price">
+              <span class="product-card__amount">£110</span>
+              <span class="product-card__size">/ 10mg vial</span>
+            </div>
+            <a href="#consult" class="btn btn--outline btn--sm">Add to Protocol</a>
+          </div>
+        </div>
+
+        <div class="product-card reveal" data-category="performance">
+          <div class="product-card__badge">Popular</div>
+          <span class="product-card__category">Performance</span>
+          <h4 class="product-card__name">CJC-1295</h4>
+          <p class="product-card__desc">GHRH analogue with DAC. Sustained elevation of GH and IGF-1 for lean mass and fat metabolism.</p>
+          <div class="product-card__data">
+            <div class="data-row"><span class="data-label">MW</span><code class="data-val">3367.9 Da</code></div>
+            <div class="data-row"><span class="data-label">Half-life</span><code class="data-val">6–8 days (DAC)</code></div>
+            <div class="data-row"><span class="data-label">Sequence</span><code class="data-val seq">Tyr·DAla·Asp·Ala·Ile·Phe·Thr·…</code></div>
+          </div>
+          <div class="product-card__purity">
+            <div class="purity-header">
+              <span class="purity-label">Purity</span>
+              <code class="purity-pct" data-pct="99.0">—</code>
+            </div>
+            <div class="purity-bar" data-pct="99.0"><div class="purity-bar__fill"></div></div>
+          </div>
+          <div class="product-card__bottom">
+            <div class="product-card__price">
+              <span class="product-card__amount">£95</span>
+              <span class="product-card__size">/ 2mg vial</span>
+            </div>
+            <a href="#consult" class="btn btn--outline btn--sm">Add to Protocol</a>
+          </div>
+        </div>
+
+        <div class="product-card reveal" data-category="performance">
+          <span class="product-card__category">Performance</span>
+          <h4 class="product-card__name">Ipamorelin</h4>
+          <p class="product-card__desc">Selective GH secretagogue. Clean pulsatile GH release without cortisol or prolactin elevation.</p>
+          <div class="product-card__data">
+            <div class="data-row"><span class="data-label">MW</span><code class="data-val">711.9 Da</code></div>
+            <div class="data-row"><span class="data-label">Half-life</span><code class="data-val">~2 hours</code></div>
+            <div class="data-row"><span class="data-label">Sequence</span><code class="data-val seq">Aib·His·D-2Nal·D-Phe·Lys·NH₂</code></div>
+          </div>
+          <div class="product-card__purity">
+            <div class="purity-header">
+              <span class="purity-label">Purity</span>
+              <code class="purity-pct" data-pct="99.1">—</code>
+            </div>
+            <div class="purity-bar" data-pct="99.1"><div class="purity-bar__fill"></div></div>
+          </div>
+          <div class="product-card__bottom">
+            <div class="product-card__price">
+              <span class="product-card__amount">£75</span>
+              <span class="product-card__size">/ 5mg vial</span>
+            </div>
+            <a href="#consult" class="btn btn--outline btn--sm">Add to Protocol</a>
+          </div>
+        </div>
+
+        <div class="product-card reveal" data-category="longevity">
+          <span class="product-card__category">Longevity</span>
+          <h4 class="product-card__name">Epithalon</h4>
+          <p class="product-card__desc">Tetrapeptide pineal extract. Telomerase activation, circadian regulation, and cellular senescence reversal.</p>
+          <div class="product-card__data">
+            <div class="data-row"><span class="data-label">MW</span><code class="data-val">390.4 Da</code></div>
+            <div class="data-row"><span class="data-label">Half-life</span><code class="data-val">~4–6 hours</code></div>
+            <div class="data-row"><span class="data-label">Sequence</span><code class="data-val seq">Ala·Glu·Asp·Gly (tetrapeptide)</code></div>
+          </div>
+          <div class="product-card__purity">
+            <div class="purity-header">
+              <span class="purity-label">Purity</span>
+              <code class="purity-pct" data-pct="99.4">—</code>
+            </div>
+            <div class="purity-bar" data-pct="99.4"><div class="purity-bar__fill"></div></div>
+          </div>
+          <div class="product-card__bottom">
+            <div class="product-card__price">
+              <span class="product-card__amount">£130</span>
+              <span class="product-card__size">/ 50mg vial</span>
+            </div>
+            <a href="#consult" class="btn btn--outline btn--sm">Add to Protocol</a>
+          </div>
+        </div>
+
+        <div class="product-card reveal" data-category="cognition">
+          <span class="product-card__category">Cognition</span>
+          <h4 class="product-card__name">Semax</h4>
+          <p class="product-card__desc">ACTH-derived neuropeptide. BDNF and VEGF upregulation for memory, focus and neuroprotection.</p>
+          <div class="product-card__data">
+            <div class="data-row"><span class="data-label">MW</span><code class="data-val">813.9 Da</code></div>
+            <div class="data-row"><span class="data-label">Half-life</span><code class="data-val">~20 minutes</code></div>
+            <div class="data-row"><span class="data-label">Sequence</span><code class="data-val seq">Met·Glu·His·Phe·Pro·Gly·Pro</code></div>
+          </div>
+          <div class="product-card__purity">
+            <div class="purity-header">
+              <span class="purity-label">Purity</span>
+              <code class="purity-pct" data-pct="98.9">—</code>
+            </div>
+            <div class="purity-bar" data-pct="98.9"><div class="purity-bar__fill"></div></div>
+          </div>
+          <div class="product-card__bottom">
+            <div class="product-card__price">
+              <span class="product-card__amount">£65</span>
+              <span class="product-card__size">/ 1mg nasal</span>
+            </div>
+            <a href="#consult" class="btn btn--outline btn--sm">Add to Protocol</a>
+          </div>
+        </div>
+
+        <div class="product-card reveal" data-category="cognition">
+          <span class="product-card__category">Cognition</span>
+          <h4 class="product-card__name">Selank</h4>
+          <p class="product-card__desc">Anxiolytic heptapeptide. Modulates GABA and serotonin for calm focus without sedation.</p>
+          <div class="product-card__data">
+            <div class="data-row"><span class="data-label">MW</span><code class="data-val">751.9 Da</code></div>
+            <div class="data-row"><span class="data-label">Half-life</span><code class="data-val">1–3 minutes</code></div>
+            <div class="data-row"><span class="data-label">Sequence</span><code class="data-val seq">Thr·Lys·Pro·Arg·Pro·Gly·Pro</code></div>
+          </div>
+          <div class="product-card__purity">
+            <div class="purity-header">
+              <span class="purity-label">Purity</span>
+              <code class="purity-pct" data-pct="99.0">—</code>
+            </div>
+            <div class="purity-bar" data-pct="99.0"><div class="purity-bar__fill"></div></div>
+          </div>
+          <div class="product-card__bottom">
+            <div class="product-card__price">
+              <span class="product-card__amount">£60</span>
+              <span class="product-card__size">/ 1mg nasal</span>
+            </div>
+            <a href="#consult" class="btn btn--outline btn--sm">Add to Protocol</a>
+          </div>
+        </div>
+
+        <div class="product-card reveal" data-category="sleep">
+          <span class="product-card__category">Sleep</span>
+          <h4 class="product-card__name">DSIP</h4>
+          <p class="product-card__desc">Delta Sleep-Inducing Peptide. Normalises sleep architecture, reduces cortisol, enhances slow-wave recovery.</p>
+          <div class="product-card__data">
+            <div class="data-row"><span class="data-label">MW</span><code class="data-val">848.9 Da</code></div>
+            <div class="data-row"><span class="data-label">Half-life</span><code class="data-val">~15 minutes</code></div>
+            <div class="data-row"><span class="data-label">Sequence</span><code class="data-val seq">Trp·Ala·Gly·Gly·Asp·Ala·Ser·Gly·Glu</code></div>
+          </div>
+          <div class="product-card__purity">
+            <div class="purity-header">
+              <span class="purity-label">Purity</span>
+              <code class="purity-pct" data-pct="98.7">—</code>
+            </div>
+            <div class="purity-bar" data-pct="98.7"><div class="purity-bar__fill"></div></div>
+          </div>
+          <div class="product-card__bottom">
+            <div class="product-card__price">
+              <span class="product-card__amount">£70</span>
+              <span class="product-card__size">/ 5mg vial</span>
+            </div>
+            <a href="#consult" class="btn btn--outline btn--sm">Add to Protocol</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS BANNER -->
+  <section class="stats">
+    <div class="container">
+      <div class="stats__grid">
+        <div class="stat reveal">
+          <span class="stat__number" data-target="99.2">0</span><span class="stat__unit">%</span>
+          <p>Average purity across all compounds</p>
+        </div>
+        <div class="stat reveal">
+          <span class="stat__number" data-target="2400">0</span><span class="stat__unit">+</span>
+          <p>Protocols completed globally</p>
+        </div>
+        <div class="stat reveal">
+          <span class="stat__number" data-target="48">0</span><span class="stat__unit">h</span>
+          <p>Cold-chain dispatch time</p>
+        </div>
+        <div class="stat reveal">
+          <span class="stat__number" data-target="12">0</span><span class="stat__unit"></span>
+          <p>Clinical advisors on the board</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RESEARCH -->
+  <section class="research section" id="research">
+    <div class="container">
+      <div class="section__header">
+        <p class="section__label reveal">05 — PEER RESEARCH</p>
+        <h2 class="section__title reveal">
+          Grounded in<br /><em>published evidence.</em>
+        </h2>
+      </div>
+      <div class="research__grid">
+        <div class="citation reveal">
+          <div class="citation__meta">
+            <span class="citation__tag">Recovery</span>
+            <span class="citation__year">J. Physiol. Pharmacol. · 2018</span>
+          </div>
+          <h4 class="citation__title">BPC-157 accelerates tendon healing via VEGF upregulation and fibroblast activation in a rat Achilles tendon transection model.</h4>
+          <p class="citation__authors">Pevec D, Novinscak T, Brcic L, et al.</p>
+          <div class="citation__badge"><span>in vivo</span><span>RCT-comparable</span></div>
+          <a href="#" class="citation__link">Read abstract →</a>
+        </div>
+        <div class="citation reveal">
+          <div class="citation__meta">
+            <span class="citation__tag">Longevity</span>
+            <span class="citation__year">Ann. N.Y. Acad. Sci. · 2003</span>
+          </div>
+          <h4 class="citation__title">Epithalamine and Epithalon: peptide regulation of ageing and cancer. Telomerase activity in cultured lymphocytes from aged subjects.</h4>
+          <p class="citation__authors">Khavinson VKh, Bondarev IE, Butyugov AA.</p>
+          <div class="citation__badge"><span>in vitro</span><span>human lymphocytes</span></div>
+          <a href="#" class="citation__link">Read abstract →</a>
+        </div>
+        <div class="citation reveal">
+          <div class="citation__meta">
+            <span class="citation__tag">Cognition</span>
+            <span class="citation__year">Neuropeptides · 2009</span>
+          </div>
+          <h4 class="citation__title">Semax: a synthetic heptapeptide with ACTH analogue properties. Effects on BDNF expression and neuroprotection under ischaemic conditions.</h4>
+          <p class="citation__authors">Dolotov OV, Karpenko EA, Inozemtseva LS, et al.</p>
+          <div class="citation__badge"><span>in vivo</span><span>neurological</span></div>
+          <a href="#" class="citation__link">Read abstract →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="about section" id="about">
+    <div class="container">
+      <div class="about__inner">
+        <div class="about__left reveal">
+          <p class="section__label">06 — PHILOSOPHY</p>
+          <h2 class="section__title">
+            Biology is<br /><em>programmable.</em>
+          </h2>
+          <p>
+            Ascension Labs was founded at the intersection of longevity medicine and high-performance biochemistry. We exist for those who refuse to accept biological decline as inevitable.
+          </p>
+          <p>
+            Every compound we carry is selected against a strict evidence threshold — minimum two peer-reviewed human trials, verified synthesis pathway, and third-party analytical testing before it enters our catalogue.
+          </p>
+          <p>
+            Our clients are executives, athletes, and physicians who require precision, discretion, and results. We are not a supplement company. We are a precision science partner.
+          </p>
+          <a href="#consult" class="btn btn--primary">Work With Us</a>
+        </div>
+        <div class="about__right reveal">
+          <div class="about__visual">
+            <div class="helix-container">
+              <svg class="helix" viewBox="0 0 200 400" fill="none">
+                <path d="M60 20 C100 60 100 100 60 140 C20 180 20 220 60 260 C100 300 100 340 60 380" stroke="currentColor" stroke-width="1.5" fill="none" opacity="0.4"/>
+                <path d="M140 20 C100 60 100 100 140 140 C180 180 180 220 140 260 C100 300 100 340 140 380" stroke="currentColor" stroke-width="1.5" fill="none" opacity="0.4"/>
+                <line x1="60" y1="20" x2="140" y2="20" stroke="currentColor" stroke-width="1" opacity="0.3"/>
+                <line x1="75" y1="47" x2="125" y2="47" stroke="currentColor" stroke-width="1" opacity="0.3"/>
+                <line x1="95" y1="78" x2="105" y2="78" stroke="currentColor" stroke-width="1" opacity="0.3"/>
+                <line x1="95" y1="120" x2="105" y2="120" stroke="currentColor" stroke-width="1" opacity="0.3"/>
+                <line x1="75" y1="152" x2="125" y2="152" stroke="currentColor" stroke-width="1" opacity="0.3"/>
+                <line x1="60" y1="183" x2="140" y2="183" stroke="currentColor" stroke-width="1" opacity="0.3"/>
+                <line x1="75" y1="215" x2="125" y2="215" stroke="currentColor" stroke-width="1" opacity="0.3"/>
+                <line x1="95" y1="248" x2="105" y2="248" stroke="currentColor" stroke-width="1" opacity="0.3"/>
+                <line x1="95" y1="288" x2="105" y2="288" stroke="currentColor" stroke-width="1" opacity="0.3"/>
+                <line x1="75" y1="320" x2="125" y2="320" stroke="currentColor" stroke-width="1" opacity="0.3"/>
+                <line x1="60" y1="355" x2="140" y2="355" stroke="currentColor" stroke-width="1" opacity="0.3"/>
+                <circle cx="60" cy="20" r="3" fill="currentColor" opacity="0.5"/>
+                <circle cx="140" cy="20" r="3" fill="currentColor" opacity="0.5"/>
+                <circle cx="60" cy="140" r="3" fill="currentColor" opacity="0.5"/>
+                <circle cx="140" cy="140" r="3" fill="currentColor" opacity="0.5"/>
+                <circle cx="60" cy="260" r="3" fill="currentColor" opacity="0.5"/>
+                <circle cx="140" cy="260" r="3" fill="currentColor" opacity="0.5"/>
+                <circle cx="60" cy="380" r="3" fill="currentColor" opacity="0.5"/>
+                <circle cx="140" cy="380" r="3" fill="currentColor" opacity="0.5"/>
+              </svg>
+            </div>
+            <div class="about__floating-tag at1 reveal">
+              <span class="tag-dot"></span><span>Third-party CoA verified</span>
+            </div>
+            <div class="about__floating-tag at2 reveal">
+              <span class="tag-dot"></span><span>Clinically advisory-led</span>
+            </div>
+            <div class="about__floating-tag at3 reveal">
+              <span class="tag-dot"></span><span>≥98% purity guaranteed</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONSULT CTA -->
+  <section class="consult section" id="consult">
+    <div class="container">
+      <div class="consult__inner reveal">
+        <p class="section__label">07 — GET STARTED</p>
+        <h2 class="section__title">
+          Begin your<br /><em>protocol.</em>
+        </h2>
+        <p class="consult__body">
+          Book a complimentary 30-minute consultation with one of our clinical advisors. We'll review your biomarkers, goals, and lifestyle to design a personalised peptide protocol.
+        </p>
+        <form class="consult__form" id="consultForm">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="firstName">First Name</label>
+              <input type="text" id="firstName" placeholder="Alexander" autocomplete="off" />
+            </div>
+            <div class="form-group">
+              <label for="email">Email Address</label>
+              <input type="email" id="email" placeholder="alex@domain.com" />
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="goals">Primary Goal</label>
+            <select id="goals">
+              <option value="">Select your primary focus</option>
+              <option>Recovery & Injury Repair</option>
+              <option>Cognitive Performance</option>
+              <option>Longevity & Anti-Ageing</option>
+              <option>Body Composition</option>
+              <option>Sleep Optimisation</option>
+              <option>Hormonal Balance</option>
+              <option>Comprehensive Protocol</option>
+            </select>
+          </div>
+          <button type="submit" class="btn btn--primary btn--lg">Request Consultation</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__inner">
+        <div class="footer__brand">
+          <a href="#" class="nav__logo footer__logo">
+            <svg class="nav__logo-mark" viewBox="0 0 32 32" fill="none">
+              <circle cx="16" cy="16" r="14" stroke="currentColor" stroke-width="1.2"/>
+              <circle cx="16" cy="16" r="6" stroke="currentColor" stroke-width="1.2"/>
+              <line x1="16" y1="2" x2="16" y2="10" stroke="currentColor" stroke-width="1.2"/>
+              <line x1="16" y1="22" x2="16" y2="30" stroke="currentColor" stroke-width="1.2"/>
+              <line x1="2" y1="16" x2="10" y2="16" stroke="currentColor" stroke-width="1.2"/>
+              <line x1="22" y1="16" x2="30" y2="16" stroke="currentColor" stroke-width="1.2"/>
+            </svg>
+            <span>ASCENSION LABS</span>
+          </a>
+          <p class="footer__tagline">Precision peptide science for the optimised individual.</p>
+        </div>
+        <div class="footer__links">
+          <div class="footer__col">
+            <h5>Products</h5>
+            <a href="#">Recovery</a>
+            <a href="#">Cognition</a>
+            <a href="#">Longevity</a>
+            <a href="#">Performance</a>
+            <a href="#">Sleep</a>
+          </div>
+          <div class="footer__col">
+            <h5>Company</h5>
+            <a href="#">About Us</a>
+            <a href="#">Science</a>
+            <a href="#">Clinical Board</a>
+            <a href="#">Lab Testing</a>
+            <a href="#">Press</a>
+          </div>
+          <div class="footer__col">
+            <h5>Support</h5>
+            <a href="#">Consultation</a>
+            <a href="#">Dosing Guides</a>
+            <a href="#">FAQ</a>
+            <a href="#">Shipping</a>
+            <a href="#">Contact</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>© 2025 Ascension Labs Ltd. All rights reserved.</p>
+        <p class="footer__disclaimer">For research purposes only. Not intended for human consumption. Always consult a qualified medical professional before beginning any peptide protocol.</p>
+        <div class="footer__legal">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Use</a>
+          <a href="#">Cookie Policy</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
