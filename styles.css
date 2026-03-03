@@ -227,15 +227,6 @@ code, .assay-mono {
   transition: background var(--dur-med), padding var(--dur-med), box-shadow var(--dur-med);
 }
 
-/* White text on dark hero when un-scrolled */
-.nav:not(.scrolled) .nav__logo { color: rgba(255,255,255,0.9); }
-.nav:not(.scrolled) .nav__logo span { color: rgba(255,255,255,0.9); }
-.nav:not(.scrolled) .nav__links a { color: rgba(255,255,255,0.6); }
-.nav:not(.scrolled) .nav__links a:hover { color: rgba(255,255,255,1); }
-.nav:not(.scrolled) .nav__links a::after { background: rgba(255,255,255,0.9); }
-.nav:not(.scrolled) .nav__cta { border-color: rgba(255,255,255,0.25) !important; color: rgba(255,255,255,0.9) !important; }
-.nav:not(.scrolled) .nav__cta:hover { background: rgba(255,255,255,0.1) !important; border-color: rgba(255,255,255,0.5) !important; }
-.nav:not(.scrolled) .nav__burger span { background: rgba(255,255,255,0.9); }
 
 .nav.scrolled {
   background: rgba(248, 248, 246, 0.94);
@@ -333,7 +324,7 @@ code, .assay-mono {
 }
 
 /* =========================================
-   HERO — DARK
+   HERO — LIGHT
    ========================================= */
 .hero {
   position: relative;
@@ -342,7 +333,21 @@ code, .assay-mono {
   display: flex;
   align-items: center;
   overflow: hidden;
-  background: var(--ink);
+  background: var(--off-white);
+}
+
+/* Subtle grid overlay */
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(var(--grey-100) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grey-100) 1px, transparent 1px);
+  background-size: 56px 56px;
+  mask-image: radial-gradient(ellipse 75% 75% at 60% 50%, black 10%, transparent 100%);
+  opacity: 0.6;
+  pointer-events: none;
 }
 
 #particleCanvas {
@@ -353,7 +358,7 @@ code, .assay-mono {
   pointer-events: none;
 }
 
-/* Molecular art — right-side background artwork */
+/* Molecular art — dark strokes on light background */
 .hero__mol-art {
   position: absolute;
   right: -4%;
@@ -361,9 +366,10 @@ code, .assay-mono {
   transform: translateY(-50%);
   width: 52%;
   max-width: 580px;
-  opacity: 0.07;
+  opacity: 0.055;
   pointer-events: none;
   user-select: none;
+  filter: invert(1);
 }
 .hero__mol-art svg { width: 100%; height: auto; }
 
@@ -390,10 +396,10 @@ code, .assay-mono {
   font-family: var(--font-mono);
   font-size: 0.62rem;
   letter-spacing: 0.08em;
-  color: var(--steel-light);
+  color: var(--steel-dark);
   padding: 0.25rem 0.65rem;
-  border: 1px solid rgba(142, 164, 178, 0.25);
-  background: rgba(142, 164, 178, 0.06);
+  border: 1px solid var(--steel-light);
+  background: rgba(142, 164, 178, 0.07);
 }
 
 .hero__eyebrow {
@@ -409,15 +415,15 @@ code, .assay-mono {
 .hero__headline {
   font-size: clamp(3.5rem, 7vw, 6.5rem);
   line-height: 1.0;
-  color: var(--white);
+  color: var(--grey-800);
   margin-bottom: var(--s6);
 }
-.hero__headline em { color: rgba(255,255,255,0.35); }
+.hero__headline em { color: var(--grey-400); }
 
 .hero__sub {
   font-size: 1rem;
   max-width: 460px;
-  color: rgba(255,255,255,0.5);
+  color: var(--grey-600);
   line-height: 1.8;
   font-weight: 300;
 }
@@ -426,8 +432,8 @@ code, .assay-mono {
 .hero__sequence {
   margin: var(--s8) 0;
   padding: var(--s4) var(--s6);
-  border: 1px solid rgba(142, 164, 178, 0.15);
-  background: rgba(142, 164, 178, 0.04);
+  border: 1px solid var(--grey-100);
+  background: var(--white);
   display: inline-flex;
   flex-direction: column;
   gap: var(--s2);
@@ -442,7 +448,7 @@ code, .assay-mono {
 .hero__seq-code {
   font-family: var(--font-mono);
   font-size: 0.72rem;
-  color: rgba(255,255,255,0.45);
+  color: var(--grey-600);
   letter-spacing: 0.02em;
   white-space: nowrap;
   overflow: hidden;
@@ -471,13 +477,13 @@ code, .assay-mono {
   font-family: var(--font-mono);
   font-size: 0.58rem;
   letter-spacing: 0.2em;
-  color: rgba(255,255,255,0.25);
+  color: var(--grey-400);
   text-transform: uppercase;
 }
 .hero__scroll-line {
   width: 1px;
   height: 48px;
-  background: linear-gradient(to bottom, rgba(255,255,255,0.2), transparent);
+  background: linear-gradient(to bottom, var(--grey-300, #b0b0ae), transparent);
   animation: lineGrow 2.5s ease-in-out infinite;
 }
 
@@ -582,23 +588,14 @@ code, .assay-mono {
 }
 
 /* =========================================
-   LABORATORY STANDARDS — DARK SECTION
+   LABORATORY STANDARDS — LIGHT SECTION
    ========================================= */
 .lab {
-  background: var(--grey-800);
+  background: var(--grey-50);
   position: relative;
   overflow: hidden;
-}
-
-.lab::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background-image:
-    linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
-  background-size: 40px 40px;
-  pointer-events: none;
+  border-top: 1px solid var(--grey-100);
+  border-bottom: 1px solid var(--grey-100);
 }
 
 .lab__inner {
@@ -610,7 +607,7 @@ code, .assay-mono {
 .lab__header .section__label { margin-bottom: var(--s4); }
 .lab__header .section__title { margin-bottom: var(--s6); }
 .lab__intro {
-  color: rgba(255,255,255,0.45);
+  color: var(--grey-600);
   font-size: 0.95rem;
   max-width: 520px;
   line-height: 1.75;
@@ -619,8 +616,8 @@ code, .assay-mono {
 /* HPLC-style purity bars */
 .lab__assay {
   margin-bottom: var(--s12);
-  border: 1px solid rgba(255,255,255,0.06);
-  background: rgba(255,255,255,0.02);
+  border: 1px solid var(--grey-100);
+  background: var(--white);
 }
 
 .assay-row {
@@ -629,23 +626,21 @@ code, .assay-mono {
   align-items: center;
   gap: var(--s6);
   padding: var(--s4) var(--s8);
-  border-bottom: 1px solid rgba(255,255,255,0.04);
+  border-bottom: 1px solid var(--grey-100);
   transition: background var(--dur-fast);
 }
 .assay-row:last-child { border-bottom: none; }
-.assay-row:hover { background: rgba(255,255,255,0.03); }
+.assay-row:hover { background: var(--off-white); }
 
 .assay-row__name .assay-mono {
-  color: rgba(255,255,255,0.85);
+  color: var(--grey-800);
   font-size: 0.78rem;
   letter-spacing: 0.06em;
 }
 
-.assay-bar-wrap { flex: 1; }
-
 .assay-bar {
   height: 3px;
-  background: rgba(255,255,255,0.06);
+  background: var(--grey-100);
   position: relative;
   overflow: hidden;
 }
@@ -654,18 +649,18 @@ code, .assay-mono {
   position: absolute;
   left: 0; top: 0; bottom: 0;
   width: 0%;
-  background: linear-gradient(90deg, var(--steel-dark), var(--gold));
+  background: linear-gradient(90deg, var(--steel), var(--gold));
   transition: width 1.4s var(--ease-out-expo);
 }
 
 .assay-row__pct {
-  color: var(--gold);
+  color: var(--gold-dark);
   font-size: 0.78rem;
   text-align: right;
 }
 
 .assay-row__method {
-  color: rgba(255,255,255,0.3);
+  color: var(--grey-400);
   font-size: 0.68rem;
   text-align: right;
   letter-spacing: 0.1em;
@@ -677,7 +672,7 @@ code, .assay-mono {
   grid-template-columns: repeat(3, 1fr);
   gap: var(--s4) var(--s8);
   padding-top: var(--s8);
-  border-top: 1px solid rgba(255,255,255,0.06);
+  border-top: 1px solid var(--grey-100);
 }
 
 .lab-method {
@@ -687,15 +682,15 @@ code, .assay-mono {
 }
 
 .lab-method__check {
-  color: var(--gold);
+  color: var(--steel-dark);
   font-size: 0.8rem;
   flex-shrink: 0;
 }
 
 .lab-method span:last-child {
   font-size: 0.8rem;
-  color: rgba(255,255,255,0.45);
-  font-weight: 300;
+  color: var(--grey-600);
+  font-weight: 400;
   letter-spacing: 0.02em;
 }
 
@@ -1381,7 +1376,7 @@ code, .assay-mono {
 .mobile-menu {
   position: fixed;
   inset: 0;
-  background: var(--ink);
+  background: var(--white);
   z-index: 99;
   display: flex;
   flex-direction: column;
@@ -1397,10 +1392,10 @@ code, .assay-mono {
 .mobile-menu a {
   font-family: var(--font-serif);
   font-size: 2.5rem;
-  color: rgba(255,255,255,0.8);
+  color: var(--grey-800);
   transition: color var(--dur-fast);
 }
-.mobile-menu a:hover { color: var(--gold); }
+.mobile-menu a:hover { color: var(--grey-400); }
 
 /* =========================================
    RESPONSIVE

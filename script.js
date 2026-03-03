@@ -101,7 +101,7 @@ function drawFrame() {
 
     ctx.beginPath();
     ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-    ctx.fillStyle = `rgba(160, 186, 202, ${p.alpha})`;
+    ctx.fillStyle = `rgba(142, 164, 178, ${p.alpha})`;
     ctx.fill();
   });
 
@@ -117,7 +117,7 @@ function drawFrame() {
         ctx.beginPath();
         ctx.moveTo(particles[i].x, particles[i].y);
         ctx.lineTo(particles[j].x, particles[j].y);
-        ctx.strokeStyle = `rgba(142, 164, 178, ${a})`;
+        ctx.strokeStyle = `rgba(142, 164, 178, ${a * 0.7})`;
         ctx.lineWidth = 0.5;
         ctx.stroke();
       }
