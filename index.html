@@ -15,13 +15,17 @@
   <header class="nav" id="nav">
     <div class="nav__inner">
       <a href="#" class="nav__logo">
-        <svg class="nav__logo-mark" viewBox="0 0 32 32" fill="none">
-          <circle cx="16" cy="16" r="14" stroke="currentColor" stroke-width="1.2"/>
-          <circle cx="16" cy="16" r="6" stroke="currentColor" stroke-width="1.2"/>
-          <line x1="16" y1="2" x2="16" y2="10" stroke="currentColor" stroke-width="1.2"/>
-          <line x1="16" y1="22" x2="16" y2="30" stroke="currentColor" stroke-width="1.2"/>
-          <line x1="2" y1="16" x2="10" y2="16" stroke="currentColor" stroke-width="1.2"/>
-          <line x1="22" y1="16" x2="30" y2="16" stroke="currentColor" stroke-width="1.2"/>
+        <svg class="nav__logo-mark" viewBox="0 0 52 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <!-- Geometric A -->
+          <path d="M8,44 L26,4 L44,44" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+          <line x1="17" y1="29" x2="35" y2="29" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/>
+          <!-- Orbital arc: sweeps from lower-left over and to upper-right -->
+          <path d="M4,38 C0,10 26,-2 46,14" stroke="currentColor" stroke-width="1.3" fill="none" stroke-linecap="round"/>
+          <!-- 4-pointed sparkle at arc terminus -->
+          <line x1="46" y1="10" x2="46" y2="18" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/>
+          <line x1="42" y1="14" x2="50" y2="14" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/>
+          <line x1="43.2" y1="11.2" x2="48.8" y2="16.8" stroke="currentColor" stroke-width="0.9" stroke-linecap="round"/>
+          <line x1="48.8" y1="11.2" x2="43.2" y2="16.8" stroke="currentColor" stroke-width="0.9" stroke-linecap="round"/>
         </svg>
         <span>ASCENSION LABS</span>
       </a>
@@ -207,9 +211,9 @@
         <p class="hero__sub reveal">
           Pharmaceutical-grade peptides engineered for the serious biohacker. Clinically informed. Rigorously sourced. Precisely dosed.
         </p>
-        <div class="hero__sequence reveal" aria-label="BPC-157 amino acid sequence">
-          <span class="hero__seq-label">BPC-157</span>
-          <code class="hero__seq-code">H₂N·Gly·Glu·Pro·Pro·Pro·Gly·Lys·Pro·Ala·Asp·Asp·Ala·Gly·Leu·Val·COOH</code>
+        <div class="hero__sequence reveal" aria-label="Melanotan II amino acid sequence">
+          <span class="hero__seq-label">MT-2</span>
+          <code class="hero__seq-code">Ac·Nle·c[Asp·His·D-Phe·Arg·Trp·Lys]·NH₂</code>
         </div>
         <div class="hero__actions reveal">
           <a href="#products" class="btn btn--primary">Explore Compounds</a>
@@ -226,30 +230,24 @@
   <!-- MARQUEE STRIP -->
   <div class="marquee-strip">
     <div class="marquee-track">
-      <span>BPC-157</span><span class="sep">—</span>
-      <span>TB-500</span><span class="sep">—</span>
-      <span>CJC-1295</span><span class="sep">—</span>
-      <span>Ipamorelin</span><span class="sep">—</span>
-      <span>Epithalon</span><span class="sep">—</span>
-      <span>Selank</span><span class="sep">—</span>
+      <span>Melanotan II</span><span class="sep">—</span>
       <span>GHK-Cu</span><span class="sep">—</span>
-      <span>AOD-9604</span><span class="sep">—</span>
-      <span>Semax</span><span class="sep">—</span>
-      <span>PT-141</span><span class="sep">—</span>
-      <span>DSIP</span><span class="sep">—</span>
-      <span>Tesamorelin</span><span class="sep">—</span>
-      <span>BPC-157</span><span class="sep">—</span>
-      <span>TB-500</span><span class="sep">—</span>
-      <span>CJC-1295</span><span class="sep">—</span>
-      <span>Ipamorelin</span><span class="sep">—</span>
-      <span>Epithalon</span><span class="sep">—</span>
-      <span>Selank</span><span class="sep">—</span>
+      <span>Retatrutide</span><span class="sep">—</span>
+      <span>MT-2</span><span class="sep">—</span>
       <span>GHK-Cu</span><span class="sep">—</span>
-      <span>AOD-9604</span><span class="sep">—</span>
-      <span>Semax</span><span class="sep">—</span>
-      <span>PT-141</span><span class="sep">—</span>
-      <span>DSIP</span><span class="sep">—</span>
-      <span>Tesamorelin</span><span class="sep">—</span>
+      <span>Reta</span><span class="sep">—</span>
+      <span>Melanotan II</span><span class="sep">—</span>
+      <span>GHK-Cu</span><span class="sep">—</span>
+      <span>Retatrutide</span><span class="sep">—</span>
+      <span>MT-2</span><span class="sep">—</span>
+      <span>GHK-Cu</span><span class="sep">—</span>
+      <span>Reta</span><span class="sep">—</span>
+      <span>Melanotan II</span><span class="sep">—</span>
+      <span>GHK-Cu</span><span class="sep">—</span>
+      <span>Retatrutide</span><span class="sep">—</span>
+      <span>MT-2</span><span class="sep">—</span>
+      <span>GHK-Cu</span><span class="sep">—</span>
+      <span>Reta</span><span class="sep">—</span>
     </div>
   </div>
 
@@ -314,63 +312,33 @@
         </div>
         <div class="lab__assay">
           <div class="assay-row reveal">
-            <div class="assay-row__name"><span class="assay-mono">BPC-157</span></div>
-            <div class="assay-row__bar-wrap">
-              <div class="assay-bar" data-pct="99.2">
-                <div class="assay-bar__fill"></div>
-              </div>
-            </div>
-            <div class="assay-row__pct assay-mono" data-target="99.2">—</div>
-            <div class="assay-row__method assay-mono">RP-HPLC</div>
-          </div>
-          <div class="assay-row reveal">
-            <div class="assay-row__name"><span class="assay-mono">TB-500</span></div>
-            <div class="assay-row__bar-wrap">
-              <div class="assay-bar" data-pct="98.8">
-                <div class="assay-bar__fill"></div>
-              </div>
-            </div>
-            <div class="assay-row__pct assay-mono" data-target="98.8">—</div>
-            <div class="assay-row__method assay-mono">RP-HPLC</div>
-          </div>
-          <div class="assay-row reveal">
-            <div class="assay-row__name"><span class="assay-mono">CJC-1295</span></div>
-            <div class="assay-row__bar-wrap">
-              <div class="assay-bar" data-pct="99.0">
-                <div class="assay-bar__fill"></div>
-              </div>
-            </div>
-            <div class="assay-row__pct assay-mono" data-target="99.0">—</div>
-            <div class="assay-row__method assay-mono">ESI-MS</div>
-          </div>
-          <div class="assay-row reveal">
-            <div class="assay-row__name"><span class="assay-mono">Epithalon</span></div>
-            <div class="assay-row__bar-wrap">
-              <div class="assay-bar" data-pct="99.4">
-                <div class="assay-bar__fill"></div>
-              </div>
-            </div>
-            <div class="assay-row__pct assay-mono" data-target="99.4">—</div>
-            <div class="assay-row__method assay-mono">RP-HPLC</div>
-          </div>
-          <div class="assay-row reveal">
-            <div class="assay-row__name"><span class="assay-mono">Semax</span></div>
-            <div class="assay-row__bar-wrap">
-              <div class="assay-bar" data-pct="98.9">
-                <div class="assay-bar__fill"></div>
-              </div>
-            </div>
-            <div class="assay-row__pct assay-mono" data-target="98.9">—</div>
-            <div class="assay-row__method assay-mono">ESI-MS</div>
-          </div>
-          <div class="assay-row reveal">
-            <div class="assay-row__name"><span class="assay-mono">Ipamorelin</span></div>
+            <div class="assay-row__name"><span class="assay-mono">Melanotan II</span></div>
             <div class="assay-row__bar-wrap">
               <div class="assay-bar" data-pct="99.1">
                 <div class="assay-bar__fill"></div>
               </div>
             </div>
             <div class="assay-row__pct assay-mono" data-target="99.1">—</div>
+            <div class="assay-row__method assay-mono">RP-HPLC</div>
+          </div>
+          <div class="assay-row reveal">
+            <div class="assay-row__name"><span class="assay-mono">GHK-Cu</span></div>
+            <div class="assay-row__bar-wrap">
+              <div class="assay-bar" data-pct="99.2">
+                <div class="assay-bar__fill"></div>
+              </div>
+            </div>
+            <div class="assay-row__pct assay-mono" data-target="99.2">—</div>
+            <div class="assay-row__method assay-mono">ESI-MS</div>
+          </div>
+          <div class="assay-row reveal">
+            <div class="assay-row__name"><span class="assay-mono">Retatrutide</span></div>
+            <div class="assay-row__bar-wrap">
+              <div class="assay-bar" data-pct="98.8">
+                <div class="assay-bar__fill"></div>
+              </div>
+            </div>
+            <div class="assay-row__pct assay-mono" data-target="98.8">—</div>
             <div class="assay-row__method assay-mono">RP-HPLC</div>
           </div>
         </div>
@@ -461,99 +429,50 @@
       </div>
       <div class="products__filters reveal">
         <button class="filter-btn active" data-filter="all">All</button>
-        <button class="filter-btn" data-filter="recovery">Recovery</button>
-        <button class="filter-btn" data-filter="cognition">Cognition</button>
+        <button class="filter-btn" data-filter="aesthetics">Aesthetics</button>
         <button class="filter-btn" data-filter="longevity">Longevity</button>
-        <button class="filter-btn" data-filter="performance">Performance</button>
-        <button class="filter-btn" data-filter="sleep">Sleep</button>
+        <button class="filter-btn" data-filter="metabolic">Metabolic</button>
       </div>
       <div class="products__grid" id="productsGrid">
 
-        <div class="product-card reveal" data-category="recovery">
+        <div class="product-card reveal" data-category="aesthetics">
           <div class="product-card__badge">Best Seller</div>
-          <span class="product-card__category">Recovery</span>
-          <h4 class="product-card__name">BPC-157</h4>
-          <p class="product-card__desc">Body Protection Compound. Accelerates healing of tendons, ligaments, gut and neurological tissue.</p>
+          <div class="product-card__vial" aria-hidden="true">
+            <svg viewBox="0 0 56 130" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <!-- Crimp cap -->
+              <rect x="11" y="4" width="34" height="22" rx="4" stroke="currentColor" stroke-width="1" fill="currentColor" fill-opacity="0.08"/>
+              <rect x="15" y="7" width="26" height="9" rx="2" fill="currentColor" fill-opacity="0.1"/>
+              <line x1="11" y1="20" x2="45" y2="20" stroke="currentColor" stroke-width="0.7" opacity="0.4"/>
+              <!-- Glass body -->
+              <path d="M13,26 L13,92 Q13,118 28,118 Q43,118 43,92 L43,26 Z" stroke="currentColor" stroke-width="1" fill="currentColor" fill-opacity="0.03"/>
+              <path d="M14,27 L14,92 Q14,116 28,116 Q42,116 42,92 L42,27 Z" fill="white" fill-opacity="0.55"/>
+              <!-- Fluid level -->
+              <path d="M14,62 Q28,59 42,62" stroke="currentColor" stroke-width="0.6" opacity="0.18"/>
+              <!-- Liquid -->
+              <path d="M14,63 L14,92 Q14,116 28,116 Q42,116 42,92 L42,63 Z" fill="currentColor" fill-opacity="0.06"/>
+              <!-- Label -->
+              <rect x="16" y="66" width="24" height="30" fill="white" fill-opacity="0.92" stroke="currentColor" stroke-width="0.5" stroke-opacity="0.2"/>
+              <!-- Mini A logo on label -->
+              <path d="M23,72 L28,66 L33,72 M24.5,70 L31.5,70" stroke="currentColor" stroke-width="0.8" stroke-linecap="round" stroke-linejoin="round" opacity="0.45"/>
+              <path d="M22,71 C21,67 27,64 33,67" stroke="currentColor" stroke-width="0.5" opacity="0.3" fill="none"/>
+              <!-- Label text lines -->
+              <line x1="18" y1="76" x2="38" y2="76" stroke="currentColor" stroke-width="0.6" opacity="0.18"/>
+              <line x1="18" y1="80" x2="32" y2="80" stroke="currentColor" stroke-width="0.5" opacity="0.13"/>
+              <line x1="18" y1="84" x2="36" y2="84" stroke="currentColor" stroke-width="0.5" opacity="0.13"/>
+              <line x1="18" y1="88" x2="30" y2="88" stroke="currentColor" stroke-width="0.4" opacity="0.1"/>
+              <!-- Left glass highlight -->
+              <line x1="16" y1="28" x2="16" y2="90" stroke="white" stroke-width="2.5" stroke-linecap="round" opacity="0.5"/>
+              <!-- Right subtle edge -->
+              <line x1="40" y1="28" x2="40" y2="60" stroke="white" stroke-width="1" stroke-linecap="round" opacity="0.25"/>
+            </svg>
+          </div>
+          <span class="product-card__category">Aesthetics</span>
+          <h4 class="product-card__name">Melanotan II</h4>
+          <p class="product-card__desc">Synthetic melanocortin agonist. Promotes deep melanogenesis and photoprotection via MC1R activation. Subcutaneous administration.</p>
           <div class="product-card__data">
-            <div class="data-row"><span class="data-label">MW</span><code class="data-val">1419.5 Da</code></div>
-            <div class="data-row"><span class="data-label">Half-life</span><code class="data-val">~4 hours</code></div>
-            <div class="data-row"><span class="data-label">Sequence</span><code class="data-val seq">Gly·Glu·Pro·Pro·Pro·Gly·Lys·Pro·Ala·…</code></div>
-          </div>
-          <div class="product-card__purity">
-            <div class="purity-header">
-              <span class="purity-label">Purity</span>
-              <code class="purity-pct" data-pct="99.2">—</code>
-            </div>
-            <div class="purity-bar" data-pct="99.2"><div class="purity-bar__fill"></div></div>
-          </div>
-          <div class="product-card__bottom">
-            <div class="product-card__price">
-              <span class="product-card__amount">£85</span>
-              <span class="product-card__size">/ 5mg vial</span>
-            </div>
-            <a href="#consult" class="btn btn--outline btn--sm">Add to Protocol</a>
-          </div>
-        </div>
-
-        <div class="product-card reveal" data-category="recovery">
-          <span class="product-card__category">Recovery</span>
-          <h4 class="product-card__name">TB-500</h4>
-          <p class="product-card__desc">Thymosin Beta-4 fragment. Promotes systemic tissue repair and reduces inflammatory cytokines.</p>
-          <div class="product-card__data">
-            <div class="data-row"><span class="data-label">MW</span><code class="data-val">4963.5 Da</code></div>
-            <div class="data-row"><span class="data-label">Half-life</span><code class="data-val">24–36 hours</code></div>
-            <div class="data-row"><span class="data-label">Sequence</span><code class="data-val seq">Ser·Asp·Lys·Pro·Asp·Met·Ala·Glu·Ile·…</code></div>
-          </div>
-          <div class="product-card__purity">
-            <div class="purity-header">
-              <span class="purity-label">Purity</span>
-              <code class="purity-pct" data-pct="98.8">—</code>
-            </div>
-            <div class="purity-bar" data-pct="98.8"><div class="purity-bar__fill"></div></div>
-          </div>
-          <div class="product-card__bottom">
-            <div class="product-card__price">
-              <span class="product-card__amount">£110</span>
-              <span class="product-card__size">/ 10mg vial</span>
-            </div>
-            <a href="#consult" class="btn btn--outline btn--sm">Add to Protocol</a>
-          </div>
-        </div>
-
-        <div class="product-card reveal" data-category="performance">
-          <div class="product-card__badge">Popular</div>
-          <span class="product-card__category">Performance</span>
-          <h4 class="product-card__name">CJC-1295</h4>
-          <p class="product-card__desc">GHRH analogue with DAC. Sustained elevation of GH and IGF-1 for lean mass and fat metabolism.</p>
-          <div class="product-card__data">
-            <div class="data-row"><span class="data-label">MW</span><code class="data-val">3367.9 Da</code></div>
-            <div class="data-row"><span class="data-label">Half-life</span><code class="data-val">6–8 days (DAC)</code></div>
-            <div class="data-row"><span class="data-label">Sequence</span><code class="data-val seq">Tyr·DAla·Asp·Ala·Ile·Phe·Thr·…</code></div>
-          </div>
-          <div class="product-card__purity">
-            <div class="purity-header">
-              <span class="purity-label">Purity</span>
-              <code class="purity-pct" data-pct="99.0">—</code>
-            </div>
-            <div class="purity-bar" data-pct="99.0"><div class="purity-bar__fill"></div></div>
-          </div>
-          <div class="product-card__bottom">
-            <div class="product-card__price">
-              <span class="product-card__amount">£95</span>
-              <span class="product-card__size">/ 2mg vial</span>
-            </div>
-            <a href="#consult" class="btn btn--outline btn--sm">Add to Protocol</a>
-          </div>
-        </div>
-
-        <div class="product-card reveal" data-category="performance">
-          <span class="product-card__category">Performance</span>
-          <h4 class="product-card__name">Ipamorelin</h4>
-          <p class="product-card__desc">Selective GH secretagogue. Clean pulsatile GH release without cortisol or prolactin elevation.</p>
-          <div class="product-card__data">
-            <div class="data-row"><span class="data-label">MW</span><code class="data-val">711.9 Da</code></div>
-            <div class="data-row"><span class="data-label">Half-life</span><code class="data-val">~2 hours</code></div>
-            <div class="data-row"><span class="data-label">Sequence</span><code class="data-val seq">Aib·His·D-2Nal·D-Phe·Lys·NH₂</code></div>
+            <div class="data-row"><span class="data-label">MW</span><code class="data-val">1024.2 Da</code></div>
+            <div class="data-row"><span class="data-label">Half-life</span><code class="data-val">1–2 h (active 3–4 d)</code></div>
+            <div class="data-row"><span class="data-label">Sequence</span><code class="data-val seq">Ac·Nle·c[Asp·His·D-Phe·Arg·Trp·Lys]·NH₂</code></div>
           </div>
           <div class="product-card__purity">
             <div class="purity-header">
@@ -564,107 +483,60 @@
           </div>
           <div class="product-card__bottom">
             <div class="product-card__price">
-              <span class="product-card__amount">£75</span>
-              <span class="product-card__size">/ 5mg vial</span>
+              <span class="product-card__amount">£85</span>
+              <span class="product-card__size">/ 10mg vial</span>
             </div>
             <a href="#consult" class="btn btn--outline btn--sm">Add to Protocol</a>
           </div>
         </div>
 
         <div class="product-card reveal" data-category="longevity">
+          <div class="product-card__vial" aria-hidden="true"><svg viewBox="0 0 56 130" fill="none"><rect x="11" y="4" width="34" height="22" rx="4" stroke="currentColor" stroke-width="1" fill="currentColor" fill-opacity="0.08"/><rect x="15" y="7" width="26" height="9" rx="2" fill="currentColor" fill-opacity="0.1"/><line x1="11" y1="20" x2="45" y2="20" stroke="currentColor" stroke-width="0.7" opacity="0.4"/><path d="M13,26 L13,92 Q13,118 28,118 Q43,118 43,92 L43,26 Z" stroke="currentColor" stroke-width="1" fill="currentColor" fill-opacity="0.03"/><path d="M14,27 L14,92 Q14,116 28,116 Q42,116 42,92 L42,27 Z" fill="white" fill-opacity="0.55"/><path d="M14,62 Q28,59 42,62" stroke="currentColor" stroke-width="0.6" opacity="0.18"/><path d="M14,63 L14,92 Q14,116 28,116 Q42,116 42,92 L42,63 Z" fill="currentColor" fill-opacity="0.06"/><rect x="16" y="66" width="24" height="30" fill="white" fill-opacity="0.92" stroke="currentColor" stroke-width="0.5" stroke-opacity="0.2"/><path d="M23,72 L28,66 L33,72 M24.5,70 L31.5,70" stroke="currentColor" stroke-width="0.8" stroke-linecap="round" stroke-linejoin="round" opacity="0.45"/><path d="M22,71 C21,67 27,64 33,67" stroke="currentColor" stroke-width="0.5" opacity="0.3" fill="none"/><line x1="18" y1="76" x2="38" y2="76" stroke="currentColor" stroke-width="0.6" opacity="0.18"/><line x1="18" y1="80" x2="32" y2="80" stroke="currentColor" stroke-width="0.5" opacity="0.13"/><line x1="18" y1="84" x2="36" y2="84" stroke="currentColor" stroke-width="0.5" opacity="0.13"/><line x1="16" y1="28" x2="16" y2="90" stroke="white" stroke-width="2.5" stroke-linecap="round" opacity="0.5"/></svg></div>
           <span class="product-card__category">Longevity</span>
-          <h4 class="product-card__name">Epithalon</h4>
-          <p class="product-card__desc">Tetrapeptide pineal extract. Telomerase activation, circadian regulation, and cellular senescence reversal.</p>
+          <h4 class="product-card__name">GHK-Cu</h4>
+          <p class="product-card__desc">Copper-binding tripeptide. Stimulates collagen and elastin synthesis, modulates TGF-β signalling, and accelerates skin matrix remodelling.</p>
           <div class="product-card__data">
-            <div class="data-row"><span class="data-label">MW</span><code class="data-val">390.4 Da</code></div>
-            <div class="data-row"><span class="data-label">Half-life</span><code class="data-val">~4–6 hours</code></div>
-            <div class="data-row"><span class="data-label">Sequence</span><code class="data-val seq">Ala·Glu·Asp·Gly (tetrapeptide)</code></div>
+            <div class="data-row"><span class="data-label">MW</span><code class="data-val">403.5 Da</code></div>
+            <div class="data-row"><span class="data-label">Half-life</span><code class="data-val">Short (depot effect)</code></div>
+            <div class="data-row"><span class="data-label">Sequence</span><code class="data-val seq">Gly·His·Lys–Cu²⁺</code></div>
           </div>
           <div class="product-card__purity">
             <div class="purity-header">
               <span class="purity-label">Purity</span>
-              <code class="purity-pct" data-pct="99.4">—</code>
+              <code class="purity-pct" data-pct="99.2">—</code>
             </div>
-            <div class="purity-bar" data-pct="99.4"><div class="purity-bar__fill"></div></div>
+            <div class="purity-bar" data-pct="99.2"><div class="purity-bar__fill"></div></div>
           </div>
           <div class="product-card__bottom">
             <div class="product-card__price">
-              <span class="product-card__amount">£130</span>
+              <span class="product-card__amount">£75</span>
               <span class="product-card__size">/ 50mg vial</span>
             </div>
             <a href="#consult" class="btn btn--outline btn--sm">Add to Protocol</a>
           </div>
         </div>
 
-        <div class="product-card reveal" data-category="cognition">
-          <span class="product-card__category">Cognition</span>
-          <h4 class="product-card__name">Semax</h4>
-          <p class="product-card__desc">ACTH-derived neuropeptide. BDNF and VEGF upregulation for memory, focus and neuroprotection.</p>
+        <div class="product-card reveal" data-category="metabolic">
+          <div class="product-card__badge">Clinical Grade</div>
+          <div class="product-card__vial" aria-hidden="true"><svg viewBox="0 0 56 130" fill="none"><rect x="11" y="4" width="34" height="22" rx="4" stroke="currentColor" stroke-width="1" fill="currentColor" fill-opacity="0.08"/><rect x="15" y="7" width="26" height="9" rx="2" fill="currentColor" fill-opacity="0.1"/><line x1="11" y1="20" x2="45" y2="20" stroke="currentColor" stroke-width="0.7" opacity="0.4"/><path d="M13,26 L13,92 Q13,118 28,118 Q43,118 43,92 L43,26 Z" stroke="currentColor" stroke-width="1" fill="currentColor" fill-opacity="0.03"/><path d="M14,27 L14,92 Q14,116 28,116 Q42,116 42,92 L42,27 Z" fill="white" fill-opacity="0.55"/><path d="M14,62 Q28,59 42,62" stroke="currentColor" stroke-width="0.6" opacity="0.18"/><path d="M14,63 L14,92 Q14,116 28,116 Q42,116 42,92 L42,63 Z" fill="currentColor" fill-opacity="0.06"/><rect x="16" y="66" width="24" height="30" fill="white" fill-opacity="0.92" stroke="currentColor" stroke-width="0.5" stroke-opacity="0.2"/><path d="M23,72 L28,66 L33,72 M24.5,70 L31.5,70" stroke="currentColor" stroke-width="0.8" stroke-linecap="round" stroke-linejoin="round" opacity="0.45"/><path d="M22,71 C21,67 27,64 33,67" stroke="currentColor" stroke-width="0.5" opacity="0.3" fill="none"/><line x1="18" y1="76" x2="38" y2="76" stroke="currentColor" stroke-width="0.6" opacity="0.18"/><line x1="18" y1="80" x2="32" y2="80" stroke="currentColor" stroke-width="0.5" opacity="0.13"/><line x1="18" y1="84" x2="36" y2="84" stroke="currentColor" stroke-width="0.5" opacity="0.13"/><line x1="16" y1="28" x2="16" y2="90" stroke="white" stroke-width="2.5" stroke-linecap="round" opacity="0.5"/></svg></div>
+          <span class="product-card__category">Metabolic</span>
+          <h4 class="product-card__name">Retatrutide</h4>
+          <p class="product-card__desc">GLP-1 / GIP / glucagon triple receptor agonist. Potent adiposity reduction, glycaemic control, and cardiovascular metabolic remodelling.</p>
           <div class="product-card__data">
-            <div class="data-row"><span class="data-label">MW</span><code class="data-val">813.9 Da</code></div>
-            <div class="data-row"><span class="data-label">Half-life</span><code class="data-val">~20 minutes</code></div>
-            <div class="data-row"><span class="data-label">Sequence</span><code class="data-val seq">Met·Glu·His·Phe·Pro·Gly·Pro</code></div>
+            <div class="data-row"><span class="data-label">MW</span><code class="data-val">~4766 Da</code></div>
+            <div class="data-row"><span class="data-label">Half-life</span><code class="data-val">~6 days</code></div>
+            <div class="data-row"><span class="data-label">Mechanism</span><code class="data-val seq">GLP-1R · GIPR · GcgR agonism</code></div>
           </div>
           <div class="product-card__purity">
             <div class="purity-header">
               <span class="purity-label">Purity</span>
-              <code class="purity-pct" data-pct="98.9">—</code>
+              <code class="purity-pct" data-pct="98.8">—</code>
             </div>
-            <div class="purity-bar" data-pct="98.9"><div class="purity-bar__fill"></div></div>
+            <div class="purity-bar" data-pct="98.8"><div class="purity-bar__fill"></div></div>
           </div>
           <div class="product-card__bottom">
             <div class="product-card__price">
-              <span class="product-card__amount">£65</span>
-              <span class="product-card__size">/ 1mg nasal</span>
-            </div>
-            <a href="#consult" class="btn btn--outline btn--sm">Add to Protocol</a>
-          </div>
-        </div>
-
-        <div class="product-card reveal" data-category="cognition">
-          <span class="product-card__category">Cognition</span>
-          <h4 class="product-card__name">Selank</h4>
-          <p class="product-card__desc">Anxiolytic heptapeptide. Modulates GABA and serotonin for calm focus without sedation.</p>
-          <div class="product-card__data">
-            <div class="data-row"><span class="data-label">MW</span><code class="data-val">751.9 Da</code></div>
-            <div class="data-row"><span class="data-label">Half-life</span><code class="data-val">1–3 minutes</code></div>
-            <div class="data-row"><span class="data-label">Sequence</span><code class="data-val seq">Thr·Lys·Pro·Arg·Pro·Gly·Pro</code></div>
-          </div>
-          <div class="product-card__purity">
-            <div class="purity-header">
-              <span class="purity-label">Purity</span>
-              <code class="purity-pct" data-pct="99.0">—</code>
-            </div>
-            <div class="purity-bar" data-pct="99.0"><div class="purity-bar__fill"></div></div>
-          </div>
-          <div class="product-card__bottom">
-            <div class="product-card__price">
-              <span class="product-card__amount">£60</span>
-              <span class="product-card__size">/ 1mg nasal</span>
-            </div>
-            <a href="#consult" class="btn btn--outline btn--sm">Add to Protocol</a>
-          </div>
-        </div>
-
-        <div class="product-card reveal" data-category="sleep">
-          <span class="product-card__category">Sleep</span>
-          <h4 class="product-card__name">DSIP</h4>
-          <p class="product-card__desc">Delta Sleep-Inducing Peptide. Normalises sleep architecture, reduces cortisol, enhances slow-wave recovery.</p>
-          <div class="product-card__data">
-            <div class="data-row"><span class="data-label">MW</span><code class="data-val">848.9 Da</code></div>
-            <div class="data-row"><span class="data-label">Half-life</span><code class="data-val">~15 minutes</code></div>
-            <div class="data-row"><span class="data-label">Sequence</span><code class="data-val seq">Trp·Ala·Gly·Gly·Asp·Ala·Ser·Gly·Glu</code></div>
-          </div>
-          <div class="product-card__purity">
-            <div class="purity-header">
-              <span class="purity-label">Purity</span>
-              <code class="purity-pct" data-pct="98.7">—</code>
-            </div>
-            <div class="purity-bar" data-pct="98.7"><div class="purity-bar__fill"></div></div>
-          </div>
-          <div class="product-card__bottom">
-            <div class="product-card__price">
-              <span class="product-card__amount">£70</span>
+              <span class="product-card__amount">£180</span>
               <span class="product-card__size">/ 5mg vial</span>
             </div>
             <a href="#consult" class="btn btn--outline btn--sm">Add to Protocol</a>
@@ -711,32 +583,32 @@
       <div class="research__grid">
         <div class="citation reveal">
           <div class="citation__meta">
-            <span class="citation__tag">Recovery</span>
-            <span class="citation__year">J. Physiol. Pharmacol. · 2018</span>
+            <span class="citation__tag">Aesthetics</span>
+            <span class="citation__year">Eur. J. Pharmacol. · 2004</span>
           </div>
-          <h4 class="citation__title">BPC-157 accelerates tendon healing via VEGF upregulation and fibroblast activation in a rat Achilles tendon transection model.</h4>
-          <p class="citation__authors">Pevec D, Novinscak T, Brcic L, et al.</p>
-          <div class="citation__badge"><span>in vivo</span><span>RCT-comparable</span></div>
+          <h4 class="citation__title">Melanotan II and the MC1R/MC4R receptor system: dose-dependent melanogenesis and photoprotective signalling in human melanocyte cultures.</h4>
+          <p class="citation__authors">Hadley ME, Dorr RT.</p>
+          <div class="citation__badge"><span>in vitro</span><span>human cell line</span></div>
           <a href="#" class="citation__link">Read abstract →</a>
         </div>
         <div class="citation reveal">
           <div class="citation__meta">
             <span class="citation__tag">Longevity</span>
-            <span class="citation__year">Ann. N.Y. Acad. Sci. · 2003</span>
+            <span class="citation__year">J. Invest. Dermatol. · 2012</span>
           </div>
-          <h4 class="citation__title">Epithalamine and Epithalon: peptide regulation of ageing and cancer. Telomerase activity in cultured lymphocytes from aged subjects.</h4>
-          <p class="citation__authors">Khavinson VKh, Bondarev IE, Butyugov AA.</p>
-          <div class="citation__badge"><span>in vitro</span><span>human lymphocytes</span></div>
+          <h4 class="citation__title">GHK-Cu promotes collagen and elastin gene expression and reduces matrix metalloproteinase activity in aged human dermal fibroblasts.</h4>
+          <p class="citation__authors">Pickart L, Vasquez-Soltero JM, Margolina A.</p>
+          <div class="citation__badge"><span>in vitro</span><span>human fibroblasts</span></div>
           <a href="#" class="citation__link">Read abstract →</a>
         </div>
         <div class="citation reveal">
           <div class="citation__meta">
-            <span class="citation__tag">Cognition</span>
-            <span class="citation__year">Neuropeptides · 2009</span>
+            <span class="citation__tag">Metabolic</span>
+            <span class="citation__year">N. Engl. J. Med. · 2023</span>
           </div>
-          <h4 class="citation__title">Semax: a synthetic heptapeptide with ACTH analogue properties. Effects on BDNF expression and neuroprotection under ischaemic conditions.</h4>
-          <p class="citation__authors">Dolotov OV, Karpenko EA, Inozemtseva LS, et al.</p>
-          <div class="citation__badge"><span>in vivo</span><span>neurological</span></div>
+          <h4 class="citation__title">Retatrutide, a GIP, GLP-1, and glucagon receptor agonist, for people with type 2 diabetes: a randomised, double-blind, placebo and active-controlled, parallel-group, phase 2 trial.</h4>
+          <p class="citation__authors">Rosenstock J, Frias JP, Jastreboff AM, et al.</p>
+          <div class="citation__badge"><span>RCT Phase 2</span><span>n=338</span></div>
           <a href="#" class="citation__link">Read abstract →</a>
         </div>
       </div>
@@ -851,16 +723,18 @@
       <div class="footer__inner">
         <div class="footer__brand">
           <a href="#" class="nav__logo footer__logo">
-            <svg class="nav__logo-mark" viewBox="0 0 32 32" fill="none">
-              <circle cx="16" cy="16" r="14" stroke="currentColor" stroke-width="1.2"/>
-              <circle cx="16" cy="16" r="6" stroke="currentColor" stroke-width="1.2"/>
-              <line x1="16" y1="2" x2="16" y2="10" stroke="currentColor" stroke-width="1.2"/>
-              <line x1="16" y1="22" x2="16" y2="30" stroke="currentColor" stroke-width="1.2"/>
-              <line x1="2" y1="16" x2="10" y2="16" stroke="currentColor" stroke-width="1.2"/>
-              <line x1="22" y1="16" x2="30" y2="16" stroke="currentColor" stroke-width="1.2"/>
+            <svg class="nav__logo-mark" viewBox="0 0 52 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M8,44 L26,4 L44,44" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+              <line x1="17" y1="29" x2="35" y2="29" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/>
+              <path d="M4,38 C0,10 26,-2 46,14" stroke="currentColor" stroke-width="1.3" fill="none" stroke-linecap="round"/>
+              <line x1="46" y1="10" x2="46" y2="18" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/>
+              <line x1="42" y1="14" x2="50" y2="14" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/>
+              <line x1="43.2" y1="11.2" x2="48.8" y2="16.8" stroke="currentColor" stroke-width="0.9" stroke-linecap="round"/>
+              <line x1="48.8" y1="11.2" x2="43.2" y2="16.8" stroke="currentColor" stroke-width="0.9" stroke-linecap="round"/>
             </svg>
             <span>ASCENSION LABS</span>
           </a>
+          <p class="footer__tagline__sub">ELEVATE · OPTIMIZE · TRANSCEND</p>
           <p class="footer__tagline">Precision peptide science for the optimised individual.</p>
         </div>
         <div class="footer__links">
