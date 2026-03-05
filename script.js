@@ -307,6 +307,38 @@ if (helix) {
 }
 
 
+// ---- EXPRESS INTEREST (EXPANDING CATALOGUE) ----
+document.querySelectorAll('.interest-card__cta[data-compound]').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const compound = btn.dataset.compound;
+    const consultSection = document.getElementById('consult');
+    if (!consultSection) return;
+
+    // Reveal and pre-fill the notes field
+    const notesGroup = document.getElementById('notesGroup');
+    const notesField = document.getElementById('notes');
+    if (notesGroup && notesField) {
+      notesGroup.style.display = 'block';
+      notesField.value = `I am interested in ${compound} — please notify me when it becomes available.`;
+    }
+
+    // Scroll to consult section
+    const offset = nav ? nav.offsetHeight : 80;
+    window.scrollTo({ top: consultSection.getBoundingClientRect().top + window.scrollY - offset, behavior: 'smooth' });
+
+    // Brief pulse on the notes field after scroll
+    if (notesField) {
+      setTimeout(() => {
+        notesField.focus();
+        notesField.style.transition = 'border-color 0.3s';
+        notesField.style.borderColor = 'var(--steel)';
+        setTimeout(() => { notesField.style.borderColor = ''; }, 1200);
+      }, 700);
+    }
+  });
+});
+
+
 // ---- MOLECULAR ART SUBTLE FLOAT ----
 const molArt = document.querySelector('.hero__mol-art');
 if (molArt) {
